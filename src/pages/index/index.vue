@@ -1,17 +1,25 @@
 <template>
   <view class="index">
-    <text>{{ msg }}</text>
+    <region-picker v-model="value" @change="(_, name) => (regionName = name)">
+      <button type="primary">选择省市</button>
+    </region-picker>
+    <view>{{ value.join("、") }}</view>
+    <text>{{ regionName }}</text>
   </view>
 </template>
 
 <script>
-import './index.less'
+import RegionPicker from "../../components/region-picker";
 
 export default {
-  data () {
+  components: {
+    RegionPicker,
+  },
+  data() {
     return {
-      msg: 'Hello world!'
-    }
-  }
-}
+      value: [],
+      regionName: "",
+    };
+  },
+};
 </script>

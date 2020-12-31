@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'taro-vue-region-picker',
   date: '2020-12-31',
@@ -10,6 +12,9 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [],
+  alias: {
+    "@": path.resolve(__dirname, "..", "src")
+  },
   defineConstants: {
   },
   copy: {
